@@ -55,7 +55,7 @@ classDiagram
     }
 
     class Config {
-        +Modules: map~string, Module~
+        +Modules: Map<string, Module>
     }
 
     class Module {
@@ -66,7 +66,7 @@ classDiagram
         +DNS: DNSProbe
         +ICMP: ICMPProbe
         +GRPC: GRPCProbe
-        +Headers: map~string, string~
+        +Headers: Map<string, string>
         # (other prober-specific configs)
     }
 
@@ -103,7 +103,7 @@ classDiagram
 
     class ResultHistory {
         +MaxResults: uint
-        +results: list~Result~
+        +results: List<Result>
         +Add(string, string, string, bool)
         +Get(int64) *Result
         +List() []Result
